@@ -1,12 +1,12 @@
 {
-  "name": "energycalculatorelectron",
+  "name": "energycalc",
   "version": "0.0.1",
   "description": "Port de EnergyCalculator a Electron",
   "main": "main.js",
   "scripts": {
-    "test": "electron .",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,52 @@
     },
     "linux": {
       "category": "utility"
+    }
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.50",
+    "@electron-forge/maker-deb": "^6.0.0-beta.50",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.50",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.50",
+    "@electron-forge/maker-zip": "^6.0.0-beta.50",
+    "electron": "^8.2.2"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "material-design-icons": "^3.0.1"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "energycalc"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {
+            "maintainer": "ThePotatoCamera",
+            "name": "energycalc",
+            "productName": "Wizard101 Energy Calculator",
+            "categories": "Game",
+            "description": "A basic Wizard101 energy calculator",
+            "productDescription": "A basic Wizard101 energy calculator written in Electron. Feel free to use it and improve the code!"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
     }
   }
 }
