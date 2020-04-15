@@ -1,0 +1,34 @@
+{
+  "name": "energycalculatorelectron",
+  "version": "0.0.1",
+  "description": "Port de EnergyCalculator a Electron",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThePotatoCamera/EnergyCalculatorElectron.git"
+  },
+  "keywords": [
+    "Wizard101"
+  ],
+  "author": "ThePotatoCamera",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ThePotatoCamera/EnergyCalculatorElectron/issues"
+  },
+  "homepage": "https://github.com/ThePotatoCamera/EnergyCalculatorElectron#readme",
+  "build": {
+    "appId": "com.electron.energycalculator",
+    "productName": "Wizard101 Energy Calculator",
+    "mac": {
+      "category": "utility"
+    },
+    "linux": {
+      "category": "utility"
+    }
+  }
+}
